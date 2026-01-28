@@ -49,12 +49,10 @@ echo "> Ensuring Vue project exists"
 
 if [ ! -f package.json ]; then
   echo "package.json not found"
-  echo "Creating Vue 3 project with name: $PROJECT_NAME"
+  echo "Creating Vue 3 project in the workspace root"
 
-  npm create vite@latest "$PROJECT_NAME" -- \
+  npm create vite@latest . -- \
     --template vue
-
-  cd "$PROJECT_NAME"
 
   echo "Vue project created successfully"
 else
