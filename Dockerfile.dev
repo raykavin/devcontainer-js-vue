@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node:1.0.0-20-bookworm AS devcontainer
+FROM mcr.microsoft.com/devcontainers/javascript-node:24-trixie AS devcontainer
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=America/Belem
