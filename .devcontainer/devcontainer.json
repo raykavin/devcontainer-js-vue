@@ -1,34 +1,35 @@
 {
-    "name": "MyApp Vue DevContainer (Node)",
+    "name": "My Application DevContainer (Vue)",
     "workspaceFolder": "/workspaces/app",
-    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/app,type=bind",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": ".."
-    },
-    "forwardPorts": [8080],
-    "runArgs": [
-        "--network=host",
-        "--env-file",
-        "./.devcontainer/.env.dev"
+    "dockerComposeFile": [
+        "../docker-compose.dev.yml"
     ],
+    "service": "vue",
     "remoteUser": "vscode",
     "postCreateCommand": "sh ./.devcontainer/post-create.sh",
-    "features": {
-        "ghcr.io/devcontainers/features/git:1": {}
-    },
     "customizations": {
         "vscode": {
-            "settings": {
-                "terminal.integrated.shell.linux": "fish",
-                "editor.formatOnSave": true,
-                "eslint.format.enable": true,
-                "editor.defaultFormatter": "esbenp.prettier-vscode"
-            },
             "extensions": [
+                "Vue.volar",
                 "dbaeumer.vscode-eslint",
-                "esbenp.prettier-vscode"
-            ]
+                "esbenp.prettier-vscode",
+                "ms-ceintl.vscode-language-pack-pt-br",
+                "streetsidesoftware.code-spell-checker",
+                "streetsidesoftware.code-spell-checker-portuguese-brazilian",
+                "redhat.vscode-yaml",
+                "teddyandturtle.fish",
+                "usernamehw.errorlens",
+                "mhutchie.git-graph",
+                "google.geminicodeassist"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "fish",
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "[vue]": {
+                    "editor.defaultFormatter": "Vue.volar"
+                }
+            }
         }
     }
 }

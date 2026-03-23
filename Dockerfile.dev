@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/devcontainers/javascript-node:1.0.0-20-bookworm AS devcontainer
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=America/Belem
+
+RUN apt-get update && apt-get install -y \
+    fish \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN ln -snf /usr/share/zoneinfo/America/Belem /etc/localtime \
+    && echo America/Belem > /etc/timezone
+
+RUN chsh -s /usr/bin/fish vscode
+
+USER vscode
+
+CMD ["fish"]
