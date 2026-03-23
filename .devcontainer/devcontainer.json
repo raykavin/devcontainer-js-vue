@@ -5,7 +5,7 @@
         "../docker-compose.dev.yml"
     ],
     "service": "vue",
-    "remoteUser": "vscode",
+    "remoteUser": "node",
     "postCreateCommand": "sh ./.devcontainer/post-create.sh",
     "customizations": {
         "vscode": {
