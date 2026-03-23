@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y \
 RUN ln -snf /usr/share/zoneinfo/America/Belem /etc/localtime \
     && echo America/Belem > /etc/timezone
 
-RUN chsh -s /usr/bin/fish vscode
+RUN chsh -s /usr/bin/fish node
 
-USER vscode
+USER node
 
 CMD ["fish"]
